@@ -1,6 +1,6 @@
 # ocaml-cid
 
-*Untested and unstable*
+*Untested and not stable*
 
 [Content-addressed identifiers](https://docs.ipfs.io/concepts/content-addressing/) in OCaml.
 
