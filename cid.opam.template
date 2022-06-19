@@ -1,0 +1,5 @@
+pin-depends: [
+  [ "multibase.dev" "git+https://github.com/patricoferris/ocaml-multiformat" ]
+  [ "multicodec.dev" "git+https://github.com/patricoferris/ocaml-multiformat" ]
+  [ "multihash-digestif.dev" "git+https://github.com/patricoferris/ocaml-multiformat" ]
+]
