@@ -1,4 +1,4 @@
-type version = [ `Cidv1 | `Cidv2 | `Cidv3 ]
+type version = [ `Cidv0 | `Cidv1 | `Cidv2 | `Cidv3 ]
 
 type t
 (** A content-addressed identifier. *)
