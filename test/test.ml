@@ -12,7 +12,13 @@ let tests = [
     ~version:`Cidv1
     ~base:`Base32
     ~codec:`Dag_cbor
-    ~hash:(Md.make ~ident:`Sha2_256 ~length:(256 / 8) ~digest:(Cstruct.of_hex "E30F7E51E257E9F7DA46B7CFB9174BF9AE2D238491FA07E9F85E2915BFA4D829"))
+    ~hash:(Md.make ~ident:`Sha2_256 ~length:(256 / 8) ~digest:(Cstruct.of_hex "E30F7E51E257E9F7DA46B7CFB9174BF9AE2D238491FA07E9F85E2915BFA4D829"));
+  "QmXg9Pp2ytZ14xgmQjYEiHjVjMFXzCVVEcRTWJBmLgR39V",
+  Cid.v
+    ~version:`Cidv0
+    ~base:`Base58btc
+    ~codec:`Dag_pb
+    ~hash:(Md.make ~ident:`Sha2_256 ~length:(256 / 8) ~digest:(Cstruct.of_hex "8AB7A6C5E74737878AC73863CB76739D15D4666DE44E5756BF55A2F9E9AB5F44"))
 ]
 
 let cid = Alcotest.testable Cid.pp_human Cid.equal
@@ -23,7 +29,7 @@ let tests =
     let actual = Cid.of_string expected_enc in
     Alcotest.(check cid) "same cid" actual expected;
     let actual_enc = Cid.to_string actual in
-    Alcotest.(check (result string msg)) "same encoding" actual_enc (Ok expected_enc)
+    Alcotest.(check (result string msg)) "same encoding" (Ok expected_enc) actual_enc
   in
     List.mapi (fun i v -> Alcotest.test_case ("cid " ^ string_of_int i) `Quick (test v)) tests
 
