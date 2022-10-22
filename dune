@@ -1,4 +1,4 @@
 (mdx
- (package cid)
- (preludes doc/prelude.ml)
+ (packages cid)
+ (preludes doc/prelude.txt)
  (files README.md))
