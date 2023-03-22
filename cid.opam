@@ -11,7 +11,7 @@ depends: [
   "multicodec"
   "multihash-digestif"
   "irmin-test" {with-test}
-  "alcotest" {with-test}
+  "alcotest" {with-test & >= "3.0.0"}
   "mdx" {with-test}
   "odoc" {with-doc}
 ]
