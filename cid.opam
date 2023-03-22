@@ -12,7 +12,7 @@ depends: [
   "multihash-digestif"
   "irmin-test" {with-test & >= "3.0.0"}
   "alcotest" {with-test}
-  "mdx" {with-test}
+  "mdx" {with-test & >= "2.2.1"}
   "odoc" {with-doc}
 ]
 build: [
