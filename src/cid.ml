@@ -79,7 +79,7 @@ module Make (Md : Multihash.S) = struct
     | (`Cidv1 | `Cidv2 | `Cidv3) as version ->
         let enc =
           (* TODO: when dropping support of older compilers, we can change to String.get_uint8 *)
-          Multibase.Encoding.to_code base |> String.to_bytes |> fun s ->
+          Multibase.Encoding.to_code base |> Bytes.of_string |> fun s ->
           Bytes.get_uint8 s 0
         in
         let ver =
