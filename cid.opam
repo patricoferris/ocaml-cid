@@ -6,12 +6,12 @@ authors: ["patrick@sirref.org"]
 homepage: "https://github.com/patricoferris/ocaml-cid"
 bug-reports: "https://github.com/patricoferris/ocaml-cid/issues"
 depends: [
-  "dune" {>= "2.9"}
+  "dune" {>= "3.2"}
   "multibase"
   "multicodec"
   "multihash-digestif"
-  "irmin-test" {with-test}
-  "alcotest" {with-test & >= "3.0.0"}
+  "irmin-test" {with-test & >= "3.0.0"}
+  "alcotest" {with-test}
   "mdx" {with-test}
   "odoc" {with-doc}
 ]
