@@ -1,3 +1,13 @@
 (test
  (name test)
+ (modules test)
  (libraries alcotest cid))
+
+(test
+ (name irmin_cid)
+ (modules irmin_cid)
+ (libraries lwt.unix irmin irmin-test irmin.mem cid))
+
+(mdx
+ (deps irmin_cid.exe)
+ (package cid))

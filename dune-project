@@ -1,3 +1,3 @@
-(lang dune 2.9)
-(using mdx 0.1)
+(lang dune 3.2)
+(using mdx 0.3)
 (name cid)

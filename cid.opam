@@ -10,7 +10,8 @@ depends: [
   "multibase"
   "multicodec"
   "multihash-digestif"
-  "cstruct"
+  "irmin-test" {with-test}
+  "alcotest" {with-test}
   "odoc" {with-doc}
 ]
 build: [
@@ -30,7 +31,3 @@ build: [
   ["dune" "install" "-p" name "--create-install-files" name]
 ]
 dev-repo: "git+https://github.com/patricoferris/ocaml-cid.git"
-pin-depends: [
-  [ "multibase.dev" "git+https://github.com/patricoferris/ocaml-multibase" ]
-  [ "multihash-digestif.dev" "git+https://github.com/patricoferris/ocaml-multihash" ]
-]
