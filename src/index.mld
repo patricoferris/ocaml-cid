@@ -1,0 +1,31 @@
+{0 Content Identifiers}
+
+The {! Cid} library provides a pure OCaml interface to {e Content Identifiers}.
+These are like pointers to bits of data derived from the data itself. They are
+based on the cryptographic hash of the data along with extra information describing
+things like the encoding of the data, the hash function used to produce the digest etc.
+
+For a thorough handling of this information see {{: https://docs.ipfs.tech/concepts/content-addressing/} the IPFS documentation}.
+
+{1 Quick Example}
+
+A very small example using {! Cid.of_string} and the human-readable pretty printer {! Cid.pp_human}.
+
+{[
+let s = "zb2rhe5P4gXftAwvA4eXQ5HJwsER2owDyS9sKaQRRVQPn93bA"
+let cid = Cid.of_string s |> Result.get_ok
+let () = Cid.pp_human Format.std_formatter cid
+]}
+
+Which would print the following:
+
+{[
+cidv1 - base58btc - raw - ident(sha2-256) length(32)
+digest(6e 6f f7 95 0a 36 18 7a  80 16 13 42 6e 85 8d ce
+       68 6c d7 d7 e3 c0 fc 42  ee 03 30 07 2d 24 5c 95)
+]}
+
+If instead we used {! Cid.to_string} this will base encode this for us producing the original input.
+
+The repository also {{: https://github.com/patricoferris/ocaml-cid/blob/main/test/irmin_cid.ml} contains an example of
+using Irmin and CIDs together}. This is similar to the idea of using CIDs in IPFS.

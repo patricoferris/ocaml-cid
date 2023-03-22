@@ -2,3 +2,6 @@
  (name cid)
  (public_name cid)
  (libraries multihash-digestif multibase multicodec))
+
+(documentation
+ (package cid))
