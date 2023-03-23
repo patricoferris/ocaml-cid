@@ -3,12 +3,13 @@
  (modules test)
  (libraries alcotest cid))
 
-; Enable once we're 4.10+
-; (test
-;  (name irmin_cid)
-;  (modules irmin_cid)
-;  (libraries lwt.unix irmin irmin-test irmin.mem cid))
+(test
+ (name irmin_cid)
+ (enabled_if (>= %{ocaml_version} "4.10"))
+ (modules irmin_cid)
+ (libraries lwt.unix irmin irmin-test irmin.mem cid))
 
-; (mdx
-;  (deps irmin_cid.exe)
-;  (package cid))
+(mdx
+ (enabled_if (>= %{ocaml_version} "4.10"))
+ (deps irmin_cid.exe)
+ (package cid))
