@@ -1,4 +1,6 @@
 (mdx
  (libraries cid)
  (preludes doc/prelude.txt)
- (files README.md))
+ (files README.md)
+ (deps
+  (package cid)))
